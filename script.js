@@ -311,12 +311,16 @@ function toggleProfileMenu() {
 
 // Open admin panel
 function openAdminPanel() {
+  // Get the base path from current URL (works for both local and GitHub Pages)
+  const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+  const adminUrl = basePath + 'admin.html';
+  
   // Try opening in new tab first
-  const adminWindow = window.open('./admin.html', '_blank');
+  const adminWindow = window.open(adminUrl, '_blank');
   
   // If popup blocked or failed, navigate in same window
   if (!adminWindow || adminWindow.closed || typeof adminWindow.closed === 'undefined') {
-    window.location.href = './admin.html';
+    window.location.href = adminUrl;
   }
 }
 

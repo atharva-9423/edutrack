@@ -3,6 +3,7 @@ import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/edutrack/',
   plugins: [],
   server: {
     host: '0.0.0.0',

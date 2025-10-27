@@ -312,11 +312,11 @@ function toggleProfileMenu() {
 // Open admin panel
 function openAdminPanel() {
   // Try opening in new tab first
-  const adminWindow = window.open('/admin.html', '_blank');
+  const adminWindow = window.open('./admin.html', '_blank');
   
   // If popup blocked or failed, navigate in same window
   if (!adminWindow || adminWindow.closed || typeof adminWindow.closed === 'undefined') {
-    window.location.href = '/admin.html';
+    window.location.href = './admin.html';
   }
 }
 
